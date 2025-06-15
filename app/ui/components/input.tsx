@@ -50,8 +50,8 @@ export default function Input({
         value={value}
         defaultValue={defaultValue}
         className={`
-          rounded-lg border border-hub-primary-light 
-          focus:border-hub-secondary-yellow 
+          rounded-lg border border-waving-primary-light 
+          focus:border-waving-secondary-yellow 
           read-only:bg-gray-200 read-only:cursor-not-allowed read-only:opacity-50
           disabled:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-50
           ${className}

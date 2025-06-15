@@ -16,9 +16,6 @@ export default function Page() {
           >
             <span>Acessar e-comerce</span> <ArrowRightIcon className="w-5 md:w-6" />
           </Link>
-          <p className='bottom-0 left-0 absolute m-1'>Desenvolvido por
-            <a className='text-waving-primary-light' href='https://github.com/gabrielolivra/hub-local-desafio' target='_blank'> Gabriel Bernardino de Oliveira</a>
-          </p>
         </div>
         <div className="w-1/2">
           <Image

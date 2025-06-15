@@ -11,9 +11,9 @@ const typeButton = tv({
   variants: {
     type: {
       error: 'bg-red-500 text-white hover:border-2 border-red-500 hover:text-red-500 hover:bg-white',
-      success: 'text-white bg-waving-primary-light hover:border-2 border-hub-primary-light hover:text-waving-primary-light hover:bg-white',
-      info: 'bg-waving-secondary-ciano text-white hover:border-2 border-hub-secondary-ciano hover:text-waving-secondary-ciano hover:bg-white',
-      warn: 'bg-waving-secondary-brown text-white hover:border-2 border-hub-secondary-brown hover:text-waving-secondary-brown hover:bg-white',
+      success: 'text-white bg-waving-primary-light hover:border-2 border-waving-primary-light hover:text-waving-primary-light hover:bg-white',
+      info: 'bg-waving-secondary-ciano text-white hover:border-2 border-waving-secondary-ciano hover:text-waving-secondary-ciano hover:bg-white',
+      warn: 'bg-waving-secondary-brown text-white hover:border-2 border-waving-secondary-brown hover:text-waving-secondary-brown hover:bg-white',
     },
     disabled: {
       true: 'cursor-not-allowed bg-transparent text-gray-400 border-2 border-gray-400 hover:bg-transparent hover:text-gray-400',

@@ -28,7 +28,7 @@ export function CreateData({
     <div className={` flex justify-end ${className} `}>
       <Link
         href={rota}
-        className="flex h-10 w-36 items-center justify-end rounded-lg text-[12px] bg-waving-primary-light px-4 text-sm font-medium text-waving-white transition-colors hover:bg-opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hub-primary-light"
+        className="flex h-10 w-36 items-center justify-end rounded-lg text-[12px] bg-waving-primary-light px-4 text-sm font-medium text-waving-white transition-colors hover:bg-opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-waving-primary-light"
       >
         <span className="hidden md:block">{textBtn}</span>{' '}
         <PlusIcon className="h-5 md:ml-4" />

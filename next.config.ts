@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const wavingNextConfig = {
   reactStrictMode: false,
-  output: 'standalone', // Garante que o build seja compatível com a Vercel
+  output: 'standalone', 
+   images: {
+    domains: ['placehold.co'],
+  },
 };
 
 module.exports = wavingNextConfig;

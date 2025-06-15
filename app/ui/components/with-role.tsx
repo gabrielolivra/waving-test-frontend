@@ -9,11 +9,9 @@ interface WithRoleProps {
 
 export function WithRole({ allowedRoles, children }: WithRoleProps) {
   const [canRender, setCanRender] = useState(false);
-    const  a = useSession();
-console.log(a.data?.user);
+  const session = useSession();
   useEffect(() => {
-    const user = getUserFromToken(a.data?.user?.access_token);
-    console.log(user)
+    const user = getUserFromToken(session.data?.user?.access_token);
     if (user && allowedRoles.includes(user.role)) {
       setCanRender(true);
     }

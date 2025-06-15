@@ -49,7 +49,7 @@ export default function LoginForm() {
             className="mt-4 w-full"
             aria-disabled={isPending}
           >
-            LOGAR
+            Acessar sistema
           </Button>
           <div className="flex h-8 items-end space-x-1">
             {errorMessage && (
@@ -69,7 +69,7 @@ export default function LoginForm() {
           className="mt-4 w-[450px]"
           aria-disabled={isPending}
         >
-          CRIAR CONTA
+          Criar conta
         </Button>
       </a>
     </div>

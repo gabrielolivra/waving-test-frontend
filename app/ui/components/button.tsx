@@ -12,7 +12,7 @@ const typeButton = tv({
     type: {
       error: 'bg-red-500 text-white hover:border-2 border-red-500 hover:text-red-500 hover:bg-white',
       success: 'text-white bg-waving-primary-light hover:border-2 border-waving-primary-light hover:text-waving-primary-light hover:bg-white',
-      info: 'bg-waving-secondary-ciano text-white hover:border-2 border-waving-secondary-ciano hover:text-waving-secondary-ciano hover:bg-white',
+      info: 'bg-waving-secondary-gold text-white hover:border-2 border-waving-secondary-gold hover:text-waving-secondary-gold hover:bg-white',
       warn: 'bg-waving-secondary-brown text-white hover:border-2 border-waving-secondary-brown hover:text-waving-secondary-brown hover:bg-white',
     },
     disabled: {

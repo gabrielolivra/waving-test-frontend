@@ -1,6 +1,6 @@
 'use client'
 import ProfileDropdown from "./profile-dropdown";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Session } from "next-auth";
 
 export default function Header({ session }: { session: Session | null }) {

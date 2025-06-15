@@ -1,10 +1,10 @@
 export const colors = {
   waving: {
     primary: {
-      light: '#0385FD',
+      light: '#000000', // preto
     },
     secondary: {
-      ciano: '#00FFFF',
+      gold: '#FFD700',
     },
   },
 };

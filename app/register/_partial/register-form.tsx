@@ -112,7 +112,7 @@ export default function RegisterForm() {
           </div>
 
           <Button tipo="success" className="mt-4 w-full" type="submit">
-            REGISTRAR
+            Registrar
           </Button>
         </div>
       </form>
@@ -122,7 +122,7 @@ export default function RegisterForm() {
           className="mt-4 w-[450px]"
           aria-disabled
         >
-          LOGAR
+          Acessar sistema
         </Button>
       </a>
     </div>

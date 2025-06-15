@@ -1,7 +1,7 @@
 export default function Page(){
-    return (
-        <div className="w-screen h-full">
+  return (
+    <div className="w-screen h-full">
             Pagina do admin
-        </div>
-    )
+    </div>
+  )
 }

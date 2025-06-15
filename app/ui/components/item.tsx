@@ -9,7 +9,7 @@ interface itemProps {
 }
 export default function Item({ name, price, action }: itemProps) {
   return (
-    <div className="m-2 flex flex-col justify-center items-center p-4 border w-[200px] rounded-lg shadow-md max-w-sm bg-white">
+    <div className=" flex flex-col justify-center items-center p-2 border w-[200px] rounded-lg shadow-md max-w-sm bg-white">
       <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
       <Image
         src="https://placehold.co/200x200.png"

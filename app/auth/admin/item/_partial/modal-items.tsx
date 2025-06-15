@@ -1,11 +1,15 @@
 import { useApiFunction } from "@/app/hooks/useApiFunction";
+import { apiPostCreateItem } from "@/app/lib/services/api/item/item";
 import Input from "@/app/ui/components/input";
 import Modal from "@/app/ui/components/modal";
+import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 interface ModalItemProps {
   isOpen: boolean;
   closeModal: () => void;
+  onConfirm: ()=> void;
 }
 
 type FormValues = {
@@ -15,7 +19,7 @@ type FormValues = {
   stockQuantity: number;
 };
 
-export default function ModalItems({ isOpen, closeModal }: ModalItemProps) {
+export default function ModalItems({ isOpen, closeModal, onConfirm}: ModalItemProps) {
   const {
     register,
     handleSubmit,
@@ -23,21 +27,35 @@ export default function ModalItems({ isOpen, closeModal }: ModalItemProps) {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const { callApi, isLoading } = useApiFunction(); 
+  const { callApi, isLoading, data, error, isFinish } = useApiFunction(apiPostCreateItem);
 
   const handlerCreate: SubmitHandler<FormValues> = async (data) => {
-    await callApi(data); 
-    reset();
-    closeModal(); 
+    await callApi(data);
   };
 
+  useEffect(() => {
+    if (isLoading) return
+    if (data && isFinish) {
+      toast.success('Item criado com sucesso!', {
+        autoClose: 3000,
+      })
+      reset();
+      onConfirm();
+      return
+    }
+    if (error && isFinish) {
+      console.log(JSON.stringify(error))
+      toast.error('erro ao criar item')
+      return
+    }
+  }, [data, isLoading, isFinish, error])
   return (
     <Modal
       title="Adicionar novo item"
       type="success"
       isOpen={isOpen}
       onCancel={closeModal}
-      onConfirm={handleSubmit(handlerCreate)} // importante: vincula o handleSubmit aqui
+      onConfirm={handleSubmit(handlerCreate)}
     >
       <form className="w-[400px] p-2">
         <div>
@@ -46,7 +64,7 @@ export default function ModalItems({ isOpen, closeModal }: ModalItemProps) {
             type="text"
             {...register("name", { required: "Nome é obrigatório" })}
           />
-          {errors.name?.message && <p>Nome é obrigatorio</p>}
+          {errors.name?.message && <p className="text-red-500">Nome é obrigatorio</p>}
         </div>
 
         <div>
@@ -56,7 +74,7 @@ export default function ModalItems({ isOpen, closeModal }: ModalItemProps) {
             {...register("description", { required: "Descrição é obrigatória" })}
           />
           {
-            errors.description?.message && <p>Descrição é obrigatória</p>
+            errors.description?.message && <p className="text-red-500">Descrição é obrigatória</p>
           }
         </div>
 
@@ -68,7 +86,7 @@ export default function ModalItems({ isOpen, closeModal }: ModalItemProps) {
             {...register("price", { required: "Preço é obrigatório", valueAsNumber: true })}
           />
           {
-            errors.price?.message && <p>O preço é obrigatório</p>
+            errors.price?.message && <p className="text-red-500">O preço é obrigatório</p>
           }
         </div>
 
@@ -81,7 +99,7 @@ export default function ModalItems({ isOpen, closeModal }: ModalItemProps) {
               valueAsNumber: true,
             })}
           />
-          {errors.stockQuantity?.message && <p>A quantidade é obrigatória</p>}
+          {errors.stockQuantity?.message && <p className="text-red-500">A quantidade é obrigatória</p>}
         </div>
 
       </form>

@@ -1,8 +1,11 @@
 'use client'
-
 import { Button } from '@/components/ui/button'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ModalItems from './_partial/modal-items'
+import { useApiFunction } from '@/app/hooks/useApiFunction'
+import { apiGetItemsStock } from '@/app/lib/services/api/item/item'
+import { LoadingComponent } from '@/app/ui/loading'
+import { useRouter } from 'next/navigation'
 
 interface Item {
   id: number
@@ -11,31 +14,53 @@ interface Item {
 }
 
 export default function Page() {
-  const [items, setItems] = useState<Item[]>([
-    { id: 1, nome: 'Item 1', preco: 10.0 },
-    { id: 2, nome: 'Item 2', preco: 20.5 },
-  ])
+  const { callApi, data, error, isFinish, isLoading } = useApiFunction(apiGetItemsStock)
+ const route = useRouter()
+  const [openModal, setOpenModal] = useState(false)
 
+  const handleConfirm = ()=> {
+    setOpenModal(false)
+    callApi()    
+  }
+
+  useEffect(() => {
+    callApi()
+    return
+  }, [])
 
   return (
     <>
       <div className='flex justify-between'>
         <Button className='m-2'>Voltar</Button>
         <h1 className='font-bold text-2xl'>Lista de item</h1>
-        <Button className='m-2'>Adicionar novo item</Button>
+        <Button className='m-2' onClick={() => setOpenModal(true)}>Adicionar novo item</Button>
 
       </div>
-      <div className="p-6">
-        <ul className="space-y-2">
-          {items.map((item) => (
-            <li key={item.id} className="border p-4 rounded shadow-sm">
-              <div><strong>Nome:</strong> {item.nome}</div>
-              <div><strong>Preço:</strong> R$ {item.preco.toFixed(2)}</div>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <ModalItems closeModal={()=> console.log()} isOpen={true}/>
+      {
+        isLoading && <LoadingComponent/>
+      }
+      {
+        data && isFinish && (
+          <div className="p-6 h-[400px] overflow-y-auto">
+            <ul className="space-y-2">
+              {data.map((item: any) => (
+                <li key={item.id} className="border p-4 rounded shadow-sm">
+                  <div><strong>Nome:</strong> {item.name}</div>
+                  <div><strong>Preço:</strong> R$ {item.price}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+      {
+        openModal && (<ModalItems
+          closeModal={() => setOpenModal(false)}
+          isOpen={openModal}
+          onConfirm={handleConfirm}
+        />)
+      }
     </>
   )
 }

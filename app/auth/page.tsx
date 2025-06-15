@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <main
       style={{ height: 'calc(100vh - 64px)' }}
-      className="w-screen h-screen"
+      className=""
     >
       <div className="grid grid-cols-2">
         <h1 className="text-center mr-auto ml-1 font-bold text-3xl">Produtos a venda</h1>

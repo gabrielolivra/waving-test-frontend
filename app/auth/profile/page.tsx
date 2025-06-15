@@ -1,7 +1,7 @@
 export default function Page(){
-    return (
-        <div className="">
+  return (
+    <div className="">
             Perfil do usuario
-        </div>
-    )
+    </div>
+  )
 }

@@ -9,7 +9,7 @@ interface WithRoleProps {
 
 export function WithRole({ allowedRoles, children }: WithRoleProps) {
   const [canRender, setCanRender] = useState(false);
-    const  session = useSession();
+  const session = useSession();
   useEffect(() => {
     const user = getUserFromToken(session.data?.user?.access_token);
     if (user && allowedRoles.includes(user.role)) {

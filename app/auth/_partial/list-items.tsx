@@ -23,17 +23,17 @@ export default function ListItems() {
     <>{
       isLoading && <LoadingComponent />
     }
-      <div>
-        {
-          listItems.map((item: IItemAvailable) => (
-            <Item
-              action={() => console.log(item)}
-              name={item.name}
-              price={item.price}
-            />
-          ))
-        }
-      </div>
+    <div>
+      {
+        listItems.map((item: IItemAvailable) => (
+          <Item
+            action={() => console.log(item)}
+            name={item.name}
+            price={item.price}
+          />
+        ))
+      }
+    </div>
     </>
   )
 }

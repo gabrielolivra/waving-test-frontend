@@ -29,7 +29,7 @@ export default function ProfileDropdown({ userName }: ProfileDropdownProps) {
         className="flex items-center justify-between cursor-pointer h-16 w-[160px] bg-gray-100 rounded-lg px-4 py-2 hover:bg-gray-200"
         onClick={() => setDropdownOpen(!dropdownOpen)}
       >
-        <UserIcon className="h-8 w-8 text-hub-secondary-orange" />
+        <UserIcon className="h-8 w-8 text-waving-secondary-orange" />
         <span className="font-bold text-xl text-gray-700">
           {userName || 'Usuário'}
         </span>

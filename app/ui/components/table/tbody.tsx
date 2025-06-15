@@ -1,3 +1,3 @@
 export default function Tbody(props: { children: React.ReactNode }) {
-  return <tbody className="bg-hub-white">{props.children}</tbody>;
+  return <tbody className="bg-waving-white">{props.children}</tbody>;
 }

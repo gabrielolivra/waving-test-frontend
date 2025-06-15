@@ -9,7 +9,7 @@ export default function RootLayout({
 
   return (
     <html lang="pt" suppressHydrationWarning>
-      <title>Desafio HUB local</title>
+      <title>Desafio waving test</title>
       <body className={` antialiased`}>{children}</body>
     </html>
   );

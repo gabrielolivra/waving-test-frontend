@@ -33,7 +33,7 @@ export default function Modal({
 
 }: ModalProps) {
   const typeColors = {
-    success: 'bg-hub-primary-light',
+    success: 'bg-waving-primary-light',
     error: 'bg-red-500 border-red-700',
     warn: 'bg-yellow-500 border-yellow-700',
     info: 'bg-blue-500 border-blue-700',

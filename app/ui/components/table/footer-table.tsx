@@ -14,7 +14,7 @@ export default function FooterTable() {
         </div>
         <div className="flex items-center">
           <button className="bg-gray-300 p-1 px-3 font-bold rounded-l-md text-gray-600">Anterior</button>
-          <button className="bg-hub-primary-light p-1 px-3 rounded-r-md font-bold text-white">Próximo</button>
+          <button className="bg-waving-primary-light p-1 px-3 rounded-r-md font-bold text-white">Próximo</button>
         </div>
       </div>
     </div>

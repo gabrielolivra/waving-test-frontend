@@ -28,7 +28,7 @@ export function CreateData({
     <div className={` flex justify-end ${className} `}>
       <Link
         href={rota}
-        className="flex h-10 w-36 items-center justify-end rounded-lg text-[12px] bg-hub-primary-light px-4 text-sm font-medium text-hub-white transition-colors hover:bg-opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hub-primary-light"
+        className="flex h-10 w-36 items-center justify-end rounded-lg text-[12px] bg-waving-primary-light px-4 text-sm font-medium text-waving-white transition-colors hover:bg-opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hub-primary-light"
       >
         <span className="hidden md:block">{textBtn}</span>{' '}
         <PlusIcon className="h-5 md:ml-4" />
@@ -47,7 +47,7 @@ export function UpdateDataButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={` ${disabled ? 'cursor-not-allowed rounded-md bg-hub-secondary-yellow/50' : ''} ${className} rounded-md border bg-hub-secondary-yellow text-hub-white p-2 hover:bg-hub-secondary-yellow/70 ${className}`}
+      className={` ${disabled ? 'cursor-not-allowed rounded-md bg-waving-secondary-yellow/50' : ''} ${className} rounded-md border bg-waving-secondary-yellow text-waving-white p-2 hover:bg-waving-secondary-yellow/70 ${className}`}
     >
       {children ? children : <PencilIcon className="size-4" />}
     </button>
@@ -80,7 +80,7 @@ export function ViewDataButton({
     <button
       onClick={onClick}
       type="button"
-      className={`rounded-md border bg-hub-primary-light text-hub-white p-2 hover:bg-hub-primary-light/70 ${className}`}
+      className={`rounded-md border bg-waving-primary-light text-waving-white p-2 hover:bg-waving-primary-light/70 ${className}`}
     >
       {children ? children : <EyeIcon className="size-4" />}
     </button>
@@ -93,7 +93,7 @@ export function RemoveDataButton({ onClick, disabled }: buttonProps) {
       onClick={onClick}
       disabled={disabled}
       type="button"
-      className={`rounded-md border bg-hub-secondary-orange text-hub-white p-2 hover:bg-hub-secondary-orange/70 ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+      className={`rounded-md border bg-waving-secondary-orange text-waving-white p-2 hover:bg-waving-secondary-orange/70 ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
       }`}
     >
       <span className="sr-only">Remove Data</span>
@@ -115,7 +115,7 @@ export function DeleteDataButton({
     <form action={deleteData}>
       <button
         type="submit"
-        className="rounded-md border bg-hub-secondary-orange text-hub-white p-2 hover:bg-hub-secondary-orange/70"
+        className="rounded-md border bg-waving-secondary-orange text-waving-white p-2 hover:bg-waving-secondary-orange/70"
       >
         <span className="sr-only">Delete</span>
         <TrashIcon className="size-4" />

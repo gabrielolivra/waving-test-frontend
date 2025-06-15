@@ -1,5 +1,5 @@
 export const colors = {
-  hub: {
+  waving: {
     primary: {
       light: '#0385FD',
     },

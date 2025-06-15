@@ -37,7 +37,7 @@ export default function Input({
 }: InputProps) {
   return (
     <div className={`flex flex-col ${classProps}`}>
-      <label htmlFor="" className="font-semibold text-hub-primary-light">
+      <label htmlFor="" className="font-semibold text-waving-primary-light">
         {label}
         {required && '*'}
       </label>

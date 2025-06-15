@@ -9,7 +9,6 @@ export default async function Layout({
   children: React.ReactNode;
 }) {
   const session = await auth();
-
   return (
     <SessionProvider session={session}>
       <title>Desafio waving test</title>

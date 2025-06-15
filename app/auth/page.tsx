@@ -19,7 +19,7 @@ export default function Page() {
       <div className="grid grid-cols-2">
         <h1 className="text-center mr-auto ml-1 font-bold text-3xl">Produtos a venda</h1>
         <div className="flex justify-end p-2 gap-2">
-          <WithRole allowedRoles={['user']}>
+          <WithRole allowedRoles={['admin']}>
             <Button onClick={() => handleRedirect('/auth/admin')}>Área administrativa</Button>
           </WithRole>
           <WithRole allowedRoles={['user']}>

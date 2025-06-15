@@ -2,6 +2,7 @@ import { useApiFunction } from "@/app/hooks/useApiFunction";
 import { IItemAvailable } from "@/app/lib/contracts/item/item.contract";
 import { apiGetItemsStock } from "@/app/lib/services/api/item/item";
 import Item from "@/app/ui/components/item";
+import { LoadingComponent } from "@/app/ui/loading";
 import { useEffect, useState } from "react";
 
 export default function ListItems() {
@@ -19,16 +20,20 @@ export default function ListItems() {
     }
   }, [data, error, isFinish, isLoading])
   return (
-    <div>
-      {
-        listItems.map((item: IItemAvailable) => (
-          <Item
-            action={() => console.log(item)}
-            name={item.name}
-            price={item.price}
-          />
-        ))
-      }
-    </div>
+    <>{
+      isLoading && <LoadingComponent />
+    }
+      <div>
+        {
+          listItems.map((item: IItemAvailable) => (
+            <Item
+              action={() => console.log(item)}
+              name={item.name}
+              price={item.price}
+            />
+          ))
+        }
+      </div>
+    </>
   )
 }

@@ -5,17 +5,10 @@ import ModalItems from './_partial/modal-items'
 import { useApiFunction } from '@/app/hooks/useApiFunction'
 import { apiGetItemsStock } from '@/app/lib/services/api/item/item'
 import { LoadingComponent } from '@/app/ui/loading'
-import { useRouter } from 'next/navigation'
-
-interface Item {
-  id: number
-  nome: string
-  preco: number
-}
+import { IItemAvailable } from '@/app/lib/contracts/item/item.contract'
 
 export default function Page() {
-  const { callApi, data, error, isFinish, isLoading } = useApiFunction(apiGetItemsStock)
- const route = useRouter()
+  const { callApi, data, isFinish, isLoading } = useApiFunction(apiGetItemsStock)
   const [openModal, setOpenModal] = useState(false)
 
   const handleConfirm = ()=> {
@@ -43,7 +36,7 @@ export default function Page() {
         data && isFinish && (
           <div className="p-6 h-[400px] overflow-y-auto">
             <ul className="space-y-2">
-              {data.map((item: any) => (
+              {data.map((item: IItemAvailable) => (
                 <li key={item.id} className="border p-4 rounded shadow-sm">
                   <div><strong>Nome:</strong> {item.name}</div>
                   <div><strong>Preço:</strong> R$ {item.price}</div>

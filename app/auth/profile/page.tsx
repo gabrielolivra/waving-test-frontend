@@ -1,6 +1,6 @@
 export default function Page(){
     return (
-        <div className="w-screen h-screen bg-gray-200">
+        <div className="">
             Perfil do usuario
         </div>
     )

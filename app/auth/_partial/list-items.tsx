@@ -23,7 +23,7 @@ export default function ListItems() {
     <>{
       isLoading && <LoadingComponent />
     }
-    <div>
+    <div className="grid grid-cols-6 gap-2 p-2">
       {
         listItems.map((item: IItemAvailable) => (
           <Item

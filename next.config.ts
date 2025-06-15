@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const wavingNextConfig = {
+  reactStrictMode: false,
+  output: 'standalone', // Garante que o build seja compatível com a Vercel
 };
 
-export default nextConfig;
+module.exports = wavingNextConfig;
